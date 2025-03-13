@@ -1,9 +1,7 @@
 # Hack-Squad
-Testing Testing 123
+**Levi Ryan**
 
-Note to self: Learn Markdown
-
-
+I plan to make the Sugar Sugar-esque thing I described on Wednesday
 
 
 
