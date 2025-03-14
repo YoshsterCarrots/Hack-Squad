@@ -27,3 +27,11 @@ Not sure what I want to do:
 **Nicolas Urruchi**
 
 My idea is to have the mouse hold a bomb and every time I click, the bomb will fall and when it lands at the bottom of the screen, it would explode into different colors.
+
+
+
+
+
+
+**Wei Wang**
+I don't know if its a good idea, but I thought of making fireworks or like a statue or things that crumbles to dust when clicked.
