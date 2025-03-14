@@ -1,4 +1,8 @@
 # Hack-Squad
+
+**Reminder: Make sure to tell everyone which Part you plan on doing!**
+
+
 **Levi Ryan**
 
 I plan to make the Sugar Sugar-esque thing I described on Wednesday
