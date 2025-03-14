@@ -10,7 +10,9 @@ I plan to make the Sugar Sugar-esque thing I described on Wednesday
 
 
 **Jacob Wasserman**
+
 Not sure what I want to do:
+
 1. Create a wave motion of particles and click on it to create ripple effect
 2. Click to explode particles
 3. Waterfall of particles till screen is full
