@@ -34,4 +34,5 @@ My idea is to have the mouse hold a bomb and every time I click, the bomb will f
 
 
 **Wei Wang**
+
 I don't know if its a good idea, but I thought of making fireworks or like a statue or things that crumbles to dust when clicked.
