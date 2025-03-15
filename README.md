@@ -22,7 +22,7 @@ Not sure what I want to do:
 2. Click to explode particles
 3. Waterfall of particles till screen is full
 
-
+Milestone 1: Part D
 
 
 
