@@ -12,13 +12,19 @@ class ParticleSystem{
 int rows = 0;
 int columns = 0;
 int particleNum = 0;
-Particle *head = nullptr;
-Particle *tail = nullptr;
+cell *head = nullptr;
+cell *tail = nullptr;
 
 void add_particle(Particle p) const{
+  cell* x = new cell(p);
+if(tail == nullptr && head == nullptr){
+tail = x;
+head = x;
+}else{
+tail = x;
 head = tail;
-head = &p;
-  
+}
+delete x;
 particleNum++;
 }
 
