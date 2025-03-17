@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sys/ioctl.h>
 #include <utility>
+#include "cell.h"
 
 using namespace std;
 
@@ -9,53 +10,50 @@ using namespace std;
 
 class ParticleSystem{
 
-int rows = 0;
-int columns = 0;
-int particleNum = 0;
-Particle *head = nullptr;
-Particle *tail = nullptr;
+	int rows = 0;
+	int columns = 0;
+	int particleNum = 0;
+	Cell* head = nullptr;
+	Cell* tail = nullptr;
 
-void add_particle(Particle p) const{
-  Particle* x = new Particle(p);
-if(tail == nullptr && head == nullptr){
-tail = x;
-head = x;
-}else{
-tail = x;
-head = tail;
-}
-delete x;
-particleNum++;
-}
+	void push_back(Particle p) {
+		Cell* x  = new Cell(p);
+		if (tail == nullptr) {
+			tail = head = x;
+		}
+		else {
+			tail->next = x;
+			x->prev = tail;
+			tail = x;
+		}
+		particleNum++;
+	}
+	~Particle {
+		Cell* copy = head;
+		for (Cell* temp = head; temp != nullptr;) {
+			copy = temp->next;
+			delete temp;
+			temp = copy;
+		}
+	}
 
-int get_row() const{
-return rows;
-}
+	int get_row() const{
+		return rows;
+	}
 
-int get_columns() const{
-return columns;
-}
+	int get_columns() const{
+		return columns;
+	}
 
-int numParticles(){
-return particleNum;
-}
+	int numParticles(){
+		return particleNum;
+	}
 
-void move_particle(){
-//INSERT CODE HERE
-}
+	void move_particle(){
+		//INSERT CODE HERE
+	}
 
-void draw_particle(ParticleGraphics g){
-//INSERT CODE HERE
-}
-
-pair<int, int> get_screen_size(){
-struct winsize w;
-ioctl(0, TIOCGWINSZ, &w);
-rows = w.ws_row - 1;
-columns = w.ws_col;
-
-return(w.ws_row - 1, w.ws_col);
-
-}
-
+	void draw_particle(ParticleGraphics g){
+		//INSERT CODE HERE
+	}
 };
