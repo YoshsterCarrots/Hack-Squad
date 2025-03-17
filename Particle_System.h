@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-class ParticleSystem(){
+class ParticleSystem{
 
 int rows = 0;
 int columns = 0;
@@ -18,11 +18,11 @@ void add_particle() const{
 particleNum++;
 }
 
-void get_row() const{
+int get_row() const{
 return rows;
 }
 
-void get_columns() const{
+int get_columns() const{
 return columns;
 }
 
