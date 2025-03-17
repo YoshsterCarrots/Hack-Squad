@@ -12,9 +12,13 @@ class ParticleSystem{
 int rows = 0;
 int columns = 0;
 int particleNum = 0;
-//PLACEHOLDER *head = nullptr;
-//PLACEHOLDER *tail = nullptr;
-void add_particle() const{
+Particle *head = nullptr;
+Particle *tail = nullptr;
+
+void add_particle(Particle p) const{
+head = tail;
+head = &p;
+  
 particleNum++;
 }
 
@@ -34,7 +38,7 @@ void move_particle(){
 //INSERT CODE HERE
 }
 
-void draw_particle(){
+void draw_particle(ParticleGraphics g){
 //INSERT CODE HERE
 }
 
