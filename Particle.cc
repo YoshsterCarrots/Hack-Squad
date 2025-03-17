@@ -29,6 +29,6 @@ void Particle::physics() {
 	//TODO
 }
 
-void Particle::draw() {
+void Particle::drawPoint() {
 	//TODO
 }

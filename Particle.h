@@ -29,6 +29,6 @@ class Particle {
 
 		void physics();
 
-		void draw();
+		void drawPoint();
 
 };
