@@ -15,8 +15,10 @@ class ParticleGraphics {
 	
 	ParticleGraphics(int red = 0, int green = 0, int blue = 0) : r(red) g(green) b(blue) {}
 
-	void getColor() const {
-
+	int getColor(char c) const {
+		if (c == 'r') return r;
+		else if (c == 'g') return g;
+		else return b;
 	}
 	void setColor(int red, int green, int blue) {
 
