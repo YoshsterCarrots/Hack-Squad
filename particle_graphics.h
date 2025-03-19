@@ -30,11 +30,11 @@ class ParticleGraphics {
 	void drawOval(int x, int y,int width,int height) {
 	
 	}
-	void drawPoint(int x, int y, red, green, blue) {
-		assert( x >= 0 and y >= 0);
+	void drawPoint(int row, int col, red, green, blue) {
+		assert( row >= 0 and col >= 0);
 		resetcolor();
 		setbgcolor(red, green, blue);
-		movecursor(x, y);
+		movecursor(row, col);
 		cout << " ";
 		cout.flush();
 		resetcolor();
