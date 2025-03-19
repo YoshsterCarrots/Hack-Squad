@@ -55,7 +55,10 @@ class ParticleSystem{
 		Cell* copy = head;
 		for(Cell* temp = head; temp != nullptr;){
 			copy = temp->next;
-			//HERE
+			temp->Particle.setX(temp->Particle.getVelX() + temp->Particle.getX());
+			temp->Particle.setY(temp->Particle.getVelY() + temp->Particle.getY());
+
+			temp = copy;
 		}
 	}
 
