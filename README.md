@@ -1,6 +1,6 @@
 # Hack-Squad
 
-
+**NOTE: Please attempt to run the Makefile before committing changes.  As of writing this (3:22, 3/19), cell.cc and cell.h have several errors that prevent me from running the Makefile.
 
 **Levi Ryan** 
 
