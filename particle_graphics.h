@@ -13,7 +13,7 @@ class ParticleGraphics {
 
 	public:
 	
-	ParticleGraphics(int red = 0, int green = 0, int blue = 0) : r(red) g(green) b(blue) {}
+	ParticleGraphics(int red = 0, int green = 0, int blue = 0) : r(red), g(green), b(blue) {}
 
 	int getColor(char c) const {
 		if (c == 'r') return r;
@@ -31,7 +31,13 @@ class ParticleGraphics {
 	
 	}
 	void drawPoint(int x, int y) {
-
+		assert( x >= 0 and y >= 0);
+		resetcolor();
+		setbgcolor(r, g, b);
+		movecursor(x, y);
+		cout << " ";
+		cout.flush();
+		resetcolor();
 	}
 	void drawRectangle(int x, int y,int width,int height) {
 
