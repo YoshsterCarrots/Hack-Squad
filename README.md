@@ -1,6 +1,6 @@
 # Hack-Squad
 
-**Reminder: Make sure to tell everyone which Part you plan on doing!**
+**Note: I don't yet have a screenshot of any merge conflicts, so I cannot turn in Milestone 2 just yet.**
 
 
 **Levi Ryan**
