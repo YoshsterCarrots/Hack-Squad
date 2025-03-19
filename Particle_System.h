@@ -68,7 +68,7 @@ class ParticleSystem{
 			copy = temp->next;
 			int x = temp->Particle.getX();
 			int y = temp->Particle.getY();
-			if(ParticleLoc <= rows && ParticleLoc <= columns){
+			if(x <= rows && y <= columns && x >= 0 && y >= 0){
 				int r = g.getColor();
 				int b = g.getColor();
 				int g = g.getColor();
