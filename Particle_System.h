@@ -60,9 +60,16 @@ class ParticleSystem{
 	void draw_particle(ParticleGraphics g){
 		Cell* copy = head;
 		for(Cell* temp = head; temp!= nullptr;){
+			copy = temp->next;
+			int x =[];
+			int y = [];
 			if(ParticleLoc <= rows && ParticleLoc <= columns){
-				//HERE
+				int r = g.getColor();
+				int b = g.getColor();
+				int g = g.getColor();
+				drawPoint(x, r, b, g);
 			}
+			temp = copy;
 		}
 	}
 };
