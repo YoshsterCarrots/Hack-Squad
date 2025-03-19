@@ -7,10 +7,10 @@
 
 I plan to make the Sugar Sugar-esque thing I described on Wednesday
 
-Milestone 1: I'm doing Part B
+Milestone 1: I'm doing Part B AND LOSING MY MIND
 
 
-Merge conflict time
+Merge aklsdjgha;lsdfjksa;lkdgh; conflict time
 
 
 
