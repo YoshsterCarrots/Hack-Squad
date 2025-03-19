@@ -32,10 +32,10 @@ class ParticleSystem{
 	}
 	~Particle {
 		Cell* copy = head;
-		for (Cell* temp = head; temp != nullptr;) {
-			copy = temp->next;
-			delete temp;
-			temp = copy;
+		while(copy != nullptr) {
+			Cell* temp = copy->next;
+			delete copy;
+			copy = temp;
 		}
 	}
 
