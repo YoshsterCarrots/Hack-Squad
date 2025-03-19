@@ -1,7 +1,7 @@
 #include "Particle.h"
 using namespace std;
 
-Particle::Particle(int x, int y, double v, int life, moveType movementType) {
+Particle::Particle(int x, int y, int dx, int dy, int life, moveType movementType) {
 	//TODO
 }
 
@@ -13,7 +13,11 @@ void Particle::setY(int value) {
 	//TODO
 }
 
-void Particle::setVelocity(double value) {
+void Particle::setXVel(int value) {
+	//TODO
+}
+
+void Particle::setYVel(int value) {
 	//TODO
 }
 
@@ -25,8 +29,11 @@ void Particle::setType(moveType value) {
 	//TODO
 }
 
-void Particle::physics() {
-	//TODO
+void Particle::doPhysics(int xAccel, int yAccel) {
+	xPos += xVel;
+	yPos += yVel;
+	xVel += xAccel;
+	yVel += yAccel;
 }
 
 void Particle::drawPoint() {
