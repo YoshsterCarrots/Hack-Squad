@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include "/public/color.h"
+#include "colors.h"
 
 class Color {
 	private:
