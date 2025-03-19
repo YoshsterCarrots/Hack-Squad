@@ -66,7 +66,14 @@ ParticleSystem::delete_particle(Cell* c) {
 	auto [rows,columns] = get_terminal_size();
 	if (c->Particle.getX() > rows || c->Particle.getX() < 0 || c->Particle.getY() > rows || c->Particle.getY() < 0) {
 		if (particleNum == 0) return;
-		else if (particleNum == 1) exit(EXIT_SUCCESS);
-		else delete c;
+		else if (particleNum == 1) {
+			delete c;
+			particleNum--;
+			exit(EXIT_SUCCESS);
+		}
+		else {
+			delete c;
+			particleNum--;
+		}
 	}
 }
