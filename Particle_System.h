@@ -50,10 +50,19 @@ class ParticleSystem{
 	}
 
 	void move_particle(){
-		//INSERT CODE HERE
+		Cell* copy = head;
+		for(Cell* temp = head; temp != nullptr;){
+			copy = temp->next;
+			//HERE
+		}
 	}
 
 	void draw_particle(ParticleGraphics g){
-		//INSERT CODE HERE
+		Cell* copy = head;
+		for(Cell* temp = head; temp!= nullptr;){
+			if(ParticleLoc <= rows && ParticleLoc <= columns){
+				//HERE
+			}
+		}
 	}
 };
