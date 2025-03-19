@@ -14,4 +14,5 @@ srand(time(0));
 int main() {
 	Particle p(0, 0, 1, 3, 100, STREAMER);
 	ParticleGraphics pg(rand() % 255, rand() % 255, rand() % 255);
+	p.doPhysics(1, 1);
 }
