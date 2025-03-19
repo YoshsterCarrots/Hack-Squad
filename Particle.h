@@ -1,27 +1,29 @@
 #pragma once
 
 class Particle {
+	public:
+		enum moveType {
+			STREAMER, BALLISTIC, FIREWORK
+		};
+
 	private:
 		int xPos = 0;
 		int yPos = 0;
 		int xVel = 0;
 		int yVel = 0;
 		int lifetime = 0;
-		moveType type = 0;
+		enum moveType type = STREAMER;
 
 	public:
-		enum moveType {
-			STREAMER, BALLISTIC, FIREWORK
-		};
 		
-		Particle(int x = 0, int y = 0, int dx = 0, int dy = 0, int life = 0, moveType movementType = 0);
+		Particle(int x = 0, int y = 0, int dx = 0, int dy = 0, int life = 0, enum moveType movementType = STREAMER);
 
 		int getX() const {return xPos;}
 		int getY() const {return yPos;}
 		int getXVel() const {return xVel;}
 		int getYVel() const {return yVel;}
 		int getLifetime() const {return lifetime;}
-		movetype getType() const {return type;}
+		enum moveType getType() const {return type;}
 
 		void setX(int value);
 		void setY(int value);

@@ -1,7 +1,7 @@
 #include "Particle.h"
 using namespace std;
 
-Particle::Particle(int x, int y, int dx, int dy, int life, moveType movementType) {
+Particle::Particle(int x, int y, int dx, int dy, int life, enum moveType movementType) {
 	//TODO
 }
 
@@ -25,7 +25,7 @@ void Particle::setLifetime(int value) {
 	//TODO
 }
 
-void Particle::setType(moveType value) {
+void Particle::setType(enum moveType value) {
 	//TODO
 }
 
