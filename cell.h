@@ -5,25 +5,28 @@
 #include "/public/color.h"
 
 class Color {
-	public:
+	private:
 		int r = 0;
 		int g = 0;
 		int b = 0;
+	public:
 		Color(int red, int green, int blue);
 };
 
 class Particles {
-	public:
+	private:
 		double x = 0.;
 		double y = 0.;
 		Color color;
+	public:
 		Particles(Color& c, double new_x, double new_y);
 };
 
 class Cell {
+	private:
+		Particle particle;
+		Cell* next = nullptr;
+		Cell* prev = nullptr;
 	public:
-	Particle particle;
-	Cell* next = nullptr;
-	Cell* prev = nullptr;
-	Cell(const Particle& p, Cell* new_next, Cell* new_prev);
+		Cell(const Particle& p, Cell* new_next, Cell* new_prev);
 };
