@@ -61,8 +61,8 @@ class ParticleSystem{
 		Cell* copy = head;
 		for(Cell* temp = head; temp!= nullptr;){
 			copy = temp->next;
-			int x =[];
-			int y = [];
+			int x = temp.getX();
+			int y = temp.getY();
 			if(ParticleLoc <= rows && ParticleLoc <= columns){
 				int r = g.getColor();
 				int b = g.getColor();
