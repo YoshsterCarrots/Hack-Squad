@@ -1,15 +1,14 @@
 # Hack-Squad
 
-**Note: I don't yet have a screenshot of any merge conflicts, so I cannot turn in Milestone 2 just yet.**
 
 
-**Levi Ryan**
+**Levi Ryan** 
 
 I plan to make the Sugar Sugar-esque thing I described on Wednesday
 
 Milestone 1: I'm doing Part B
 
-
+If you see this line, that means I fixed the merge nightmare
 
 
 
@@ -34,9 +33,9 @@ Milestone 2: Part D
 
 My idea is to have the mouse hold a bomb and every time I click, the bomb will fall and when it lands at the bottom of the screen, it would explode into different colors.
 
+Milestone 1: A
 
-
-
+Milestone 2: A
 
 **Wei Wang**
 
