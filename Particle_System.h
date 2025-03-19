@@ -3,6 +3,8 @@
 #include <sys/ioctl.h>
 #include <utility>
 #include "cell.h"
+#include "Particle.h"
+#include "particle_graphics.h"
 
 using namespace std;
 
