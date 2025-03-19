@@ -1,4 +1,6 @@
-//This is a placeholder
+#include "cell.h"
+
+using namespace std;
 
 Color::Color(int red, int green, int blue) {
 	r = red;
