@@ -34,7 +34,7 @@ Milestone 2: Part D
 
 My idea is to have the mouse hold a bomb and every time I click, the bomb will fall and when it lands at the bottom of the screen, it would explode into different colors.
 
-
+I'm doing Part A
 
 
 
