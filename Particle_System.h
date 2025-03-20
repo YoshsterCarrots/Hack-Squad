@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <iostream>
 #include <sys/ioctl.h>
@@ -17,10 +19,27 @@ class ParticleSystem{
 		int particleNum = 0;
 		Cell* head = nullptr;
 		Cell* tail = nullptr;
+		void delete_particle(Cell* c) {
+			auto [rows, columns] = get_terminal_size();
+			rows--;
+			columns--;
+			if (c->Particle.getX() > rows || c->Particle.getX() < 0 || c->Particle.getY() > rows || c->Particle.getY() < 0) {
+				if (particleNum == 0) return;
+				else if (particleNum == 1) {
+					delete c;
+					particleNum--;
+					exit(EXIT_SUCCESS);
+				}
+				else {
+					delete c;
+					particleNum--;
+				}
+			}
+		}
 	public:
 		void push_back(Particle p);
 
-		~Particle;
+		~ParticleSystem{};
 
 		int get_row() const;
 
@@ -32,5 +51,4 @@ class ParticleSystem{
 
 		void draw_particle(ParticleGraphics g);
 
-		void delete_particle(Cell* c);
 };

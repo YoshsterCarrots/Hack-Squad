@@ -1,8 +1,11 @@
+#pragma once
+
 #include <list>
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 #include "colors.h"
+#include "Particle.h"
 
 class Cell {
 	private:

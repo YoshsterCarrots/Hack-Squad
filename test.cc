@@ -9,10 +9,12 @@
 
 using namespace std;
 
-srand(time(0));
+void die() {
+	cout << "BAD INPUT" << endl;
+	exit(EXIT_FAILURE);
+}
 
-int main() {
-	Particle p(0, 0, 1, 3, 100, STREAMER);
-	ParticleGraphics pg(rand() % 255, rand() % 255, rand() % 255);
-	p.doPhysics(1, 1);
+void particle_test() {
+	Particle p;
+	if (p.getX() || p.getY() || p.getXVel() != 1 || p.getYVel() != 1 || p.life() != 100 || p.getType() != STREAMER) die();
 }

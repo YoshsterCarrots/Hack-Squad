@@ -16,7 +16,7 @@ class Particle {
 
 	public:
 		
-		Particle(int x = 0, int y = 0, int dx = 0, int dy = 0, int life = 0, enum moveType movementType = STREAMER);
+		Particle(int x = 0, int y = 0, int dx = 1, int dy = 1, int life = 100, enum moveType movementType = STREAMER);
 
 		int getX() const {return xPos;}
 		int getY() const {return yPos;}
