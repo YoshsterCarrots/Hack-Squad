@@ -39,7 +39,7 @@ class ParticleSystem{
 	public:
 		void push_back(Particle p);
 
-		~ParticleSystem{};
+		~ParticleSystem();
 
 		int get_row() const;
 
