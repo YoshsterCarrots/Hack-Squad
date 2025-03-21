@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void ParticleSystem::push_back(Particle& p) const {
+void ParticleSystem::push_back(Particle& p) {
 	Cell* x  = new Cell(p);
 	if (tail == nullptr) {
 		tail = head = x;
@@ -39,8 +39,8 @@ void ParticleSystem::move_particle(){
 	Cell* copy = head;
 	for(Cell* temp = head; temp != nullptr;){
 		copy = temp->next;
-		temp->Particle.setX(temp->Particle.getXVel() + temp->Particle.getX());
-		temp->Particle.setY(temp->Particle.getYVel() + temp->Particle.getY());
+		temp->particle.setX(temp->particle.getXVel() + temp->particle.getX());
+		temp->particle.setY(temp->particle.getYVel() + temp->particle.getY());
 
 		temp = copy;
 	}
@@ -50,8 +50,8 @@ void ParticleSystem::draw_particle(ParticleGraphics g){
 	Cell* copy = head;
 	for(Cell* temp = head; temp!= nullptr;){
 		copy = temp->next;
-		int x = temp->Particle.getX();
-		int y = temp->Particle.getY();
+		int x = temp->particle.getX();
+		int y = temp->particle.getY();
 		if(x <= rows && y <= columns && x >= 0 && y >= 0){
 			int r = g.getColor();
 			int b = g.getColor();

@@ -12,6 +12,7 @@ class Cell {
 		Particle particle;
 		Cell* next = nullptr;
 		Cell* prev = nullptr;
-		Cell(Particle& p, Cell* new_next, Cell* new_prev);
+
+		Cell(Particle& p, Cell* new_next, Cell* new_prev); 
 		Cell(Particle& p);
 };
