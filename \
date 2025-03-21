@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-ParticleGraphics::ParticleGraphics(int red, int green, int blue) : r(red), g(green), b(blue) {}
+//ParticleGraphics::ParticleGraphics(int red, int green, int blue) : r(red), g(green), b(blue) {}
 
 int ParticleGraphics::getColor(char c) const {
 	if (c == 'r') return r;
@@ -20,7 +20,7 @@ void ParticleGraphics::drawCircle(int x, int y, int radius, int red, int green, 
 	if (radius <= 0) return;
 	setbgcolor(red, green, blue);
 	for (int row = x - radius; row <= x + radius; row++) {
-		for (int col = y; col <= y + radius; row++) {
+		for (int col = y, col <= y + radius; row++) {
 			int dx = row - x;
 			int dy = col - y;
 			if (dx * dx + dy * dy <= radius * radius) {
@@ -71,22 +71,6 @@ void ParticleGraphics::drawLine(int x1, int x2, int y1, int y2, int red, int gre
     cout.flush();
     resetcolor();
 }
-
-
-void ParticleGraphics::drawPoint(int row, int col, int red, int green, int blue) {
-	setbgcolor(red, green, blue);
-	movecursor(row,col);
-	cout << " ";
-	cout.flush();
-	resetcolor();
-
-}
-
-
-
-
-
-
 
 
 

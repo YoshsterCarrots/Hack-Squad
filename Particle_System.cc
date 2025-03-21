@@ -46,17 +46,17 @@ void ParticleSystem::move_particle(){
 	}
 }
 
-void ParticleSystem::draw_particle(ParticleGraphics g){
+void ParticleSystem::draw_particle(ParticleGraphics t){
 	Cell* copy = head;
 	for(Cell* temp = head; temp!= nullptr;){
 		copy = temp->next;
 		int x = temp->particle.getX();
 		int y = temp->particle.getY();
 		if(x <= rows && y <= columns && x >= 0 && y >= 0){
-			int r = g.getColor();
-			int b = g.getColor();
-			int g = g.getColor();
-			drawPoint(x, r, b, g);
+			int r = t.getColor(r);
+			int b = t.getColor(b);
+			int g = t.getColor(g);
+			t.drawPoint(x, y, r, g, b);
 		}
 		temp = copy;
 	}
