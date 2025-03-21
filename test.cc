@@ -18,3 +18,10 @@ void particle_test() {
 	Particle p;
 	if (p.getX() || p.getY() || p.getXVel() != 1 || p.getYVel() != 1 || p.getLifetime() != 100 || p.getType() != Particle::STREAMER) die();
 }
+
+
+int main() {
+
+	particle_test();
+	return 0;
+}
