@@ -1,4 +1,5 @@
 #include "Particle_System.h"
+#include "Particle.h"
 
 using namespace std;
 
@@ -43,25 +44,25 @@ void ParticleSystem::move_particle(){
 		int x = temp->particle.getX();
 		int y = temp->particle.getY();
 		//WALL
-		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == FIREWORK) {
-			int x = temp->particle.getX();
-			int y = temp->particle.getY();
+		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == Particle::FIREWORK) {
+			//int x = temp->particle.getX();
+			//int y = temp->particle.getY();
 			Particle* currPtr = new Particle(x, y, 0, -1, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, 1, -1, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, 1, 0, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, 1, 1, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, 0, 1, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, -1, 1, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, -1, 0, 10);
-			push_back(currPtr);
-			Particle* currPtr = new Particle(x, y, -1, -1, 10);
-			push_back(currPtr);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, 1, -1, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, 1, 0, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, 1, 1, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, 0, 1, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, -1, 1, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, -1, 0, 10);
+			push_back(*currPtr);
+			currPtr = new Particle(x, y, -1, -1, 10);
+			push_back(*currPtr);
 			}
 		//WALL
 		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
