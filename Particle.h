@@ -5,7 +5,6 @@ class Particle {
 		enum moveType {
 			STREAMER, BALLISTIC, FIREWORK
 		};
-
 	private:
 		int xPos = 0;
 		int yPos = 0;
@@ -15,7 +14,7 @@ class Particle {
 		enum moveType type = STREAMER;
 
 	public:
-		
+
 		Particle(int x = 0, int y = 0, int dx = 1, int dy = 1, int life = 100, enum moveType movementType = STREAMER);
 
 		int getX() const {return xPos;}
