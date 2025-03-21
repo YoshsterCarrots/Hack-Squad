@@ -49,8 +49,8 @@ void ParticleGraphics::drawRectangle(int min_x, int min_y, int max_x, int max_y,
 
 void ParticleGraphics::drawLine(int x1, int x2, int y1, int y2, int red, int green, int blue) {
 	assert(x1 >= 0 && x2 >= 0 && y1 >= 0 && y2 >= 0);
-    assert((x1 == x2) || (y1 == y2));
-    setbgcolor(red, green, blue);
+	assert((x1 == x2) || (y1 == y2));
+	setbgcolor(red, green, blue);
 
     if (x1 == x2) { // Vertical Line
         int y_start = (y1 < y2) ? y1 : y2;
