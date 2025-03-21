@@ -38,10 +38,42 @@ int ParticleSystem::numParticles(){
 void ParticleSystem::move_particle(){
 	Cell* copy = head;
 	for(Cell* temp = head; temp != nullptr;){
+		//Setting values;
 		copy = temp->next;
-		temp->particle.setX(temp->particle.getXVel() + temp->particle.getX());
-		temp->particle.setY(temp->particle.getYVel() + temp->particle.getY());
-
+		int x = temp->particle.getX();
+		int y = temp->particle.getY();
+		//WALL
+		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == FIREWORK) {
+			int x = temp->particle.getX();
+			int y = temp->particle.getY();
+			Particle* currPtr = new Particle(x, y, 0, -1, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, 1, -1, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, 1, 0, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, 1, 1, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, 0, 1, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, -1, 1, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, -1, 0, 10);
+			push_back(currPtr);
+			Particle* currPtr = new Particle(x, y, -1, -1, 10);
+			push_back(currPtr);
+			}
+		//WALL
+		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
+		if(x > rows || x < 0 || y > columns || y < columns || temp->particle.getLifetime() <= 0){
+			delete temp;
+		}
+		else{
+		temp->particle.setX(temp->particle.getXVel() + x);
+		temp->particle.setY(temp->particle.getYVel() + y);
+		}
+		
+		//Moving to next Cell.
 		temp = copy;
 	}
 }
@@ -50,8 +82,10 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 	Cell* copy = head;
 	for(Cell* temp = head; temp!= nullptr;){
 		copy = temp->next;
+		//Get x and y of particle.
 		int x = temp->particle.getX();
 		int y = temp->particle.getY();
+		//Checks that the particle is within the screen then draws it.
 		if(x <= rows && y <= columns && x >= 0 && y >= 0){
 			int r = t.getColor(r);
 			int b = t.getColor(b);
@@ -85,4 +119,5 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 		Particle* currPtr = new Particle(x, y, -1, -1, 10);
 		push_back(currPtr);
 	}
+ 
 */
