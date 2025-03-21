@@ -2,7 +2,7 @@
 
 using namespace std;
 
-ParticleSystem::push_back(Particle p) {
+void ParticleSystem::push_back(Particle p) const {
 	Cell* x  = new Cell(p);
 	if (tail == nullptr) {
 		tail = head = x;
@@ -23,19 +23,19 @@ ParticleSystem::~ParticleSystem() {
 		copy = temp;
 	}
 }
-ParticleSystem::get_row() const{
+int ParticleSystem::get_row() const{
 	return rows;
 }
 
-ParticleSystem::get_columns() const{
+int ParticleSystem::get_columns() const{
 	return columns;
 }
 
-ParticleSystem::numParticles(){
+int ParticleSystem::numParticles(){
 	return particleNum;
 }
 
-ParticleSystem::move_particle(){
+void ParticleSystem::move_particle(){
 	Cell* copy = head;
 	for(Cell* temp = head; temp != nullptr;){
 		copy = temp->next;
@@ -46,7 +46,7 @@ ParticleSystem::move_particle(){
 	}
 }
 
-ParticleSystem::draw_particle(ParticleGraphics g){
+void ParticleSystem::draw_particle(ParticleGraphics g){
 	Cell* copy = head;
 	for(Cell* temp = head; temp!= nullptr;){
 		copy = temp->next;

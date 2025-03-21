@@ -37,7 +37,7 @@ class ParticleSystem{
 			}
 		}
 	public:
-		void push_back(Particle p);
+		void push_back(Particle p) const;
 
 		~ParticleSystem();
 
