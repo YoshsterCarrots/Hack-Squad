@@ -15,3 +15,5 @@ Particle_System.o: Particle_System.cc
 
 particle_graphics.o: particle_graphics.cc colors.h
 	g++ -g -c -fsanitize=address -std=c++23 particle_graphics.cc
+clean: 
+	rm -f *.o a.out

@@ -9,6 +9,6 @@ Cell::Cell(Particle& p, Cell* new_next, Cell* new_prev) {
 	prev = new_prev;
 }
 
-//Cell::Cell(Particle& p) {
-//	particle = p;
-//}
+Cell::Cell(Particle& p) {
+	particle = p;
+}
