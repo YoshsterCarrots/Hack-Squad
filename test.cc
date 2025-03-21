@@ -36,6 +36,11 @@ void particle_test() {
 	if (p.getLifetime() != 400) die("Setting Lifetime ain't working");
 	p.setType(Particle::FIREWORK);
 	if (p.getType() != Particle::FIREWORK) die("Setting Type ain't working");
+	p.doPhysics(1, 1);
+	if (p.getX() != 7 || p.getY() != 16 || p.getXVel() != 3 || p.getYVel() != 6 || p.getLifetime() != 399) die("Physics ain't working");
+	p.setType(Particle::BALLISTIC);
+	p.doPhysics(2, 7);
+	if (p.getX() != 12 || p.getY() != 30 || p.getXVel() != 5 || p.getYVel() != 14 || p.getLifetime() != 398) die("Ballistic Physics ain't working");
 }
 
 
