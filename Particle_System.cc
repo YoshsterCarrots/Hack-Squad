@@ -62,3 +62,27 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 	}
 }
 
+//Firework code; Place this accordingly when you can, feel free to tell me if it doesn't work
+//Also feel free to change variable names accordingly if needed
+/*
+	if (temp->particle.getLifetime() == 0 && temp->particle.getType() == FIREWORK) {
+		int x = temp->particle.getX();
+		int y = temp->particle.getY();
+		Particle* currPtr = new Particle(x, y, 0, -1, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, 1, -1, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, 1, 0, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, 1, 1, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, 0, 1, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, -1, 1, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, -1, 0, 10);
+		push_back(currPtr);
+		Particle* currPtr = new Particle(x, y, -1, -1, 10);
+		push_back(currPtr);
+	}
+*/

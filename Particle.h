@@ -14,7 +14,8 @@ class Particle {
 		enum moveType type = STREAMER;
 
 	public:
-
+		//X and Y position cannot start negative
+		//Lifetime cannot be negative
 		Particle(int x = 0, int y = 0, int dx = 1, int dy = 1, int life = 100, enum moveType movementType = STREAMER);
 
 		int getX() const {return xPos;}
