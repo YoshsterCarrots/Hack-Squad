@@ -44,14 +44,18 @@ void particle_test() {
 	p.doPhysics(2, 7);
 	if (p.getX() != 12 || p.getY() != 30 || p.getXVel() != 5 || p.getYVel() != 14 || p.getLifetime() != 398) die("Ballistic Physics ain't working");
 	
-//	pg.drawPoint(p.getX(), p.getY(), pg.getColor('r'), pg.getColor('g'), pg.getColor('b'));
+//	pg.drawPoint(p.getX(), p.getY(), pg.getColor('r'), pg.getColor('g'), pg.getColor('b')); 							Works!
 
 	Particle l(2, 4, 1, 5, 350, Particle::FIREWORK);
 	ParticleGraphics cool(42, 69, 255);
 	if (l.getX() != 2 || l.getY() != 4 || l.getXVel() != 1 || l.getYVel() != 5 || l.getLifetime() != 350 || l.getType() != Particle::FIREWORK) die("Particle constructor ain't working");
 	if (cool.getColor('r') != 42 || cool.getColor('g') != 69 || cool.getColor('b') != 255) die ("Particle Graphic constructor ain't working");
 
-	cool.drawPoint(l.getX(), l.getY(), cool.getColor('r'), cool.getColor('g'), cool.getColor('b'));
+//	cool.drawPoint(l.getX(), l.getY(), cool.getColor('r'), cool.getColor('g'), cool.getColor('b')); 					Works!
+
+	Particle* a = new Particle(1, 1, 1, 1, 500);
+	Particle* b = new Particle(2, 4, 2, 1, 750, Particle::BALLISTIC);
+	Particle* c = new Particle(53, 29, 2, 2, 90, Particle::FIREWORK);
 }
 
 int main() {
