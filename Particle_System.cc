@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void ParticleSystem::push_back(Particle p) const {
+void ParticleSystem::push_back(Particle& p) const {
 	Cell* x  = new Cell(p);
 	if (tail == nullptr) {
 		tail = head = x;
