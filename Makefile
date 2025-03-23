@@ -15,5 +15,8 @@ Particle_System.o: Particle_System.cc
 
 particle_graphics.o: particle_graphics.cc colors.h
 	g++ -g -c -fsanitize=address -std=c++23 particle_graphics.cc
+wasserman_pj.o: wasserman_pj.cc Particle_System.h particle_graphics.h colors.h
+	g++ -g -c -fsanitize=address -std=c++23 wasserman_pj.cc
+
 clean: 
 	rm -f *.o a.out
