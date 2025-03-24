@@ -21,3 +21,5 @@ wasserman_pj.o: wasserman_pj.cc wasserman_pj.h Particle_System.h particle_graphi
 clean: 
 	rm -f *.o a.out
 
+testMaybe: 
+	g++ yoshsterTesting.cc cell.cc Particle.cc Particle_System.cc particle_graphics.cc -o testMaybe
