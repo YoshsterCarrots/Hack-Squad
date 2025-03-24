@@ -1,5 +1,9 @@
 #include <iostream>
 #include "wasserman_pj.h"
+#include "cell.h"
+#include "Particle.h"
+#include "Particle_System.h"
+#include "particle_graphics.h"
 using namespace std;
 
 
@@ -24,7 +28,7 @@ int main() {
 	else if (choice == 3) {
 		//placeholder
 	}
-	else {
+	else if (choice == 4) {
 		wasserman_project();
 	}
 

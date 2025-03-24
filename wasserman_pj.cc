@@ -1,6 +1,6 @@
-//#include "Particle_System.h"
-//#include "particle_graphics.h"
-//#include "colors.h"
+#include "Particle_System.h"
+#include "particle_graphics.h"
+#include "colors.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

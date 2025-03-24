@@ -1,7 +1,7 @@
-a.out: main.o cell.o Particle.o Particle_System.o particle_graphics.o
+a.out: main.o cell.o Particle.o Particle_System.o particle_graphics.o wasserman_pj.o
 	g++ -g -fsanitize=address -std=c++23 *.o
 
-main.o: main.cc cell.h Particle.h Particle_System.h particle_graphics.h
+main.o: main.cc cell.h Particle.h Particle_System.h particle_graphics.h wasserman_pj.h
 	g++ -g -c -fsanitize=address -std=c++23 main.cc
 
 cell.o: cell.cc
@@ -20,3 +20,4 @@ wasserman_pj.o: wasserman_pj.cc wasserman_pj.h Particle_System.h particle_graphi
 
 clean: 
 	rm -f *.o a.out
+
