@@ -69,7 +69,21 @@ void ParticleSystem::move_particle(){
 		//WALL
 		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
 		if(x > rows || x < 0 || y > columns || y < 0 || temp->particle.getLifetime() <= 0){
+			if(temp->prev == nullptr){
+			Cell* copy = temp;
+			temp = temp->next;
+			delete copy;
+			particleNum--;
+			}
+			else if(temp->next == nullptr){
 			delete temp;
+			particleNum--;
+			}else{
+			temp->next->prev = temp->prev;
+			temp->prev->next = temp->next;
+			delete temp;
+			particleNum--;
+			}
 		}
 		else{
 		temp->particle.setX(temp->particle.getXVel() + x);
