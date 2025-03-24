@@ -17,6 +17,8 @@ int main() {
 	cout << "2. Wei's Project\n";
 	cout << "3. Nicolas's Project\n";
 	cout << "4. Jacob's Project\n";
+	
+	cin >> choice;
 
 	if (choice == 1) {
 		//placeholder
