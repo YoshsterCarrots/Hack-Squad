@@ -106,9 +106,14 @@ void ParticleSystem::move_particle(){
 
 		}
 		else{
-		//temp->particle.setX(temp->particle.getXVel() + x);
-		//temp->particle.setY(temp->particle.getYVel() + y);
-		temp->particle.doPhysics();
+			//temp->particle.setX(temp->particle.getXVel() + x);
+			//temp->particle.setY(temp->particle.getYVel() + y);
+
+			if (temp->particle.getType() == Particle::BALLISTIC) {
+				temp->particle.doPhysics(0, 1);
+			} else {
+				temp->particle.doPhysics();
+			}
 		}
 		
 		//Moving to next Cell.
