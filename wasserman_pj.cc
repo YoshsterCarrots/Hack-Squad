@@ -7,23 +7,27 @@
 #include <unistd.h>
 
 void wasserman_project() {
+	
+	ParticleSystem ps;
+	ParticleGraphics pg(0, 0, 0);
+
 
 	auto [rows, columns] = get_terminal_size();
 	columns *= 4;
 	rows *= 4;
 	
-	ParticleSystem.set_row(rows);
-	ParticleSystem.set_columns(columns);
+	ps.set_row(rows);
+	ps.set_columns(columns);
 
-	if (ParticleSystem.get_row() == 0 or ParticleSystem.get_columns() == 0) die();
+	if (ps.get_row() == 0 or ps.get_columns() == 0) return;
 
 	clearscreen();
-	ParticleGraphics.drawRectangle(0, 0, ParticleSystem.get_row(), ParticleSystem.get_columns(), 0, 0, 0);
+	pg.drawRectangle(0, 0, ps.get_row(), ps.get_columns(), 0, 0, 0);
 
 	for (int frame = 0; frame <= 100; ++frame) {
 		for (int i = 0; i < 10; ++i) {
-			int x = rand() % ParticleSystem.get_columns();
-			int y = rand() % ParticleSystem.get_row();
+			int x = rand() % ps.get_columns();
+			int y = rand() % ps.get_row();
 			int dx = (rand() % 15) - 7;
 			int dy = (rand() % 15) -7;
 			int life = 3;
@@ -32,13 +36,13 @@ void wasserman_project() {
 			int b = rand() % 256;
 			
 			Particle p(x, y, dx, dy, life, Particle::BALLISTIC);
-			ParticleSystem.push_back(p);
-			ParticleGraphics.setColor(r, g, b);
+			ps.push_back(p);
+			pg.setColor(r, g, b);
 
 		}
 
-		ParticleSystem.move_particle();
-		ParticleSystem.draw_particle(ParticleGraphics);
+		ps.move_particle();
+		ps.draw_particle(pg);
 
 		usleep(100000);
 	}

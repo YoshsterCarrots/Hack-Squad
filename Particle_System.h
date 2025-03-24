@@ -45,6 +45,10 @@ class ParticleSystem{
 
 		int get_columns() const;
 
+		void set_row(int r);
+
+		void set_columns(int c);
+
 		int numParticles();
 
 		void move_particle();

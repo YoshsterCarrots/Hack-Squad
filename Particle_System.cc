@@ -28,8 +28,16 @@ int ParticleSystem::get_row() const{
 	return rows;
 }
 
+void ParticleSystem::set_row(int r) {
+	rows = r;
+}
+
 int ParticleSystem::get_columns() const{
 	return columns;
+}
+
+void ParticleSystem::set_columns(int c) {
+	columns = c;
 }
 
 int ParticleSystem::numParticles(){
