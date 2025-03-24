@@ -4,8 +4,8 @@
 using namespace std;
 
 //pushes a particle back into the doubly linked list cell
-void ParticleSystem::push_back(Particle* p){
-	Cell* x  = new Cell(*p);
+void ParticleSystem::push_back(Particle p){
+	Cell* x  = new Cell(p);
 	if (tail == nullptr) {
 		tail = head = x;
 	}
@@ -57,23 +57,15 @@ void ParticleSystem::move_particle(){
 		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == Particle::FIREWORK) {
 			//int x = temp->particle.getX();
 			//int y = temp->particle.getY();
-			Particle* currPtr = new Particle(x, y, 0, -1, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, 1, -1, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, 1, 0, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, 1, 1, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, 0, 1, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, -1, 1, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, -1, 0, 10);
-			push_back(currPtr);
-			currPtr = new Particle(x, y, -1, -1, 10);
-			push_back(currPtr);
-			}
+			push_back(Particle(x, y, 0, -1, 10));
+			push_back(Particle(x, y, 1, -1, 10));
+			push_back(Particle(x, y, 1, 0, 10));
+			push_back(Particle(x, y, 1, 1, 10));
+			push_back(Particle(x, y, 0, 1, 10));
+			push_back(Particle(x, y, -1, 1, 10));
+			push_back(Particle(x, y, -1, 0, 10));
+			push_back(Particle(x, y, -1, -1, 10));
+		}
 		//WALL
 		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
 		if(x > rows || x < 0 || y > columns || y < 0 || temp->particle.getLifetime() <= 0){
