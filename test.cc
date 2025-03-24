@@ -53,9 +53,19 @@ void particle_test() {
 
 //	cool.drawPoint(l.getX(), l.getY(), cool.getColor('r'), cool.getColor('g'), cool.getColor('b')); 					Works!
 
+	ParticleSystem ps;
+	
+	if (ps.numParticles() != 0) die("Partical System ain't setting number to 0 when created");
+
 	Particle* a = new Particle(1, 1, 1, 1, 500);
 	Particle* b = new Particle(2, 4, 2, 1, 750, Particle::BALLISTIC);
 	Particle* c = new Particle(53, 29, 2, 2, 90, Particle::FIREWORK);
+
+	ps.push_back(a);
+
+	delete a;
+	delete b;
+	delete c;
 }
 
 int main() {
