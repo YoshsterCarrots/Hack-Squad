@@ -51,8 +51,8 @@ void ParticleSystem::move_particle(){
 	for(Cell* temp = head; temp != nullptr;){
 		//Setting values;
 		copy = temp->next;
-		int x = temp->particle.getX();
-		int y = temp->particle.getY();
+		int x = temp->particle.getY();
+		int y = temp->particle.getX();
 		//WALL
 		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == Particle::FIREWORK) {
 			//int x = temp->particle.getX();
@@ -109,11 +109,7 @@ void ParticleSystem::move_particle(){
 			//temp->particle.setX(temp->particle.getXVel() + x);
 			//temp->particle.setY(temp->particle.getYVel() + y);
 
-			if (temp->particle.getType() == Particle::BALLISTIC) {
-				temp->particle.doPhysics(0, 1);
-			} else {
-				temp->particle.doPhysics();
-			}
+			temp->particle.doPhysics();
 		}
 		
 		//Moving to next Cell.
@@ -126,8 +122,8 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 	for(Cell* temp = head; temp!= nullptr;){
 		copy = temp->next;
 		//Get x and y of particle.
-		int x = temp->particle.getX();
-		int y = temp->particle.getY();
+		int x = temp->particle.getY();
+		int y = temp->particle.getX();
 		//Checks that the particle is within the screen then draws it.
 		if(x <= rows && y <= columns && x >= 0 && y >= 0){
 			int r = t.getColor(r);
