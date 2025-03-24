@@ -106,8 +106,9 @@ void ParticleSystem::move_particle(){
 
 		}
 		else{
-		temp->particle.setX(temp->particle.getXVel() + x);
-		temp->particle.setY(temp->particle.getYVel() + y);
+		//temp->particle.setX(temp->particle.getXVel() + x);
+		//temp->particle.setY(temp->particle.getYVel() + y);
+		temp->particle.doPhysics();
 		}
 		
 		//Moving to next Cell.
