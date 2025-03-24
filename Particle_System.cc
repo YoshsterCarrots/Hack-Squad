@@ -51,8 +51,8 @@ void ParticleSystem::move_particle(){
 	for(Cell* temp = head; temp != nullptr;){
 		//Setting values;
 		copy = temp->next;
-		int x = temp->particle.getY();
-		int y = temp->particle.getX();
+		int x = temp->particle.getX();
+		int y = temp->particle.getY();
 		//WALL
 		if (temp->particle.getLifetime() == 0 && temp->particle.getType() == Particle::FIREWORK) {
 			//int x = temp->particle.getX();
@@ -68,7 +68,7 @@ void ParticleSystem::move_particle(){
 		}
 		//WALL
 		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
-		if(x > rows || x < 0 || y > columns || y < 0 || temp->particle.getLifetime() <= 0){
+		if(y > rows || y < 0 || x > columns || x < 0 || temp->particle.getLifetime() <= 0){
 
 			/*
 			if(temp->prev == nullptr){
