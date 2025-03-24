@@ -62,6 +62,11 @@ void particle_test() {
 	Particle* c = new Particle(53, 29, 2, 2, 90, Particle::FIREWORK);
 
 	ps.push_back(a);
+	if (ps.numParticles() != 1) die("Particle System didn't update the size");
+	ps.push_back(b);
+	ps.push_back(c);
+
+	if (ps.numParticles() != 3) die("Particle System didn't update the size");
 
 	delete a;
 	delete b;

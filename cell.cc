@@ -3,12 +3,14 @@
 
 using namespace std;
 
-Cell::Cell(Particle& p, Cell* new_next, Cell* new_prev) {
+//calls a three point parameter of Cell
+Cell::Cell(Particle p, Cell* new_next, Cell* new_prev) {
 	particle = p;
 	next = new_next;
 	prev = new_prev;
 }
 
-Cell::Cell(Particle& p) {
+//calls a one point parameter of Cell
+Cell::Cell(Particle p) {
 	particle = p;
 }

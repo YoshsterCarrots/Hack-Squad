@@ -3,8 +3,9 @@
 
 using namespace std;
 
-void ParticleSystem::push_back(Particle& p) {
-	Cell* x  = new Cell(p);
+//pushes a particle back into the doubly linked list cell
+void ParticleSystem::push_back(Particle* p){
+	Cell* x  = new Cell(*p);
 	if (tail == nullptr) {
 		tail = head = x;
 	}
@@ -16,6 +17,7 @@ void ParticleSystem::push_back(Particle& p) {
 	particleNum++;
 }
 
+//deletes all new cell pointers at the end of the program
 ParticleSystem::~ParticleSystem() {
 	Cell* copy = head;
 	while(copy != nullptr) {
@@ -56,21 +58,21 @@ void ParticleSystem::move_particle(){
 			//int x = temp->particle.getX();
 			//int y = temp->particle.getY();
 			Particle* currPtr = new Particle(x, y, 0, -1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, 1, -1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, 1, 0, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, 1, 1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, 0, 1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, -1, 1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, -1, 0, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			currPtr = new Particle(x, y, -1, -1, 10);
-			push_back(*currPtr);
+			push_back(currPtr);
 			}
 		//WALL
 		//if temp's x or y is out of the screen then it will be deleted or if its lifetime is 0.
