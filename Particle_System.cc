@@ -126,9 +126,9 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 		int y = temp->particle.getX();
 		//Checks that the particle is within the screen then draws it.
 		if(x <= rows && y <= columns && x >= 0 && y >= 0){
-			int r = t.getColor(r);
-			int b = t.getColor(b);
-			int g = t.getColor(g);
+			int r = t.getColor('r');
+			int b = t.getColor('b');
+			int g = t.getColor('g');
 			t.drawPoint(x, y, r, g, b);
 		}
 		temp = copy;

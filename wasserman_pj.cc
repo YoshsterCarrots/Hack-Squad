@@ -31,10 +31,10 @@ void wasserman_project() {
 			int dx = (rand() % 15) - 7;
 			int dy = (rand() % 15) -7;
 			int life = 3;
-			int r = rand() % 256;
-			int g = rand() % 256;
-			int b = rand() % 256;
-			
+			int r = 255;
+			int g = 0;
+			int b = 0;
+
 			Particle p(x, y, dx, dy, life, Particle::BALLISTIC);
 			ps.push_back(p);
 			pg.setColor(r, g, b);
