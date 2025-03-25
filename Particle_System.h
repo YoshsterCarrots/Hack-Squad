@@ -54,5 +54,7 @@ class ParticleSystem{
 		void move_particle();
 
 		void draw_particle(ParticleGraphics g);
+		
+		void remove(Cell* target);
 
 };

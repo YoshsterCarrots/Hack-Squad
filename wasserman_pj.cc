@@ -6,6 +6,12 @@
 #include <ctime>
 #include <unistd.h>
 
+void die() {
+	cout << "BAD INPUT" << endl;
+	exit(EXIT_FAILURE);
+
+}
+
 void wasserman_project() {
 	
 	ParticleSystem ps;
@@ -19,29 +25,31 @@ void wasserman_project() {
 	ps.set_row(rows);
 	ps.set_columns(columns);
 
-	if (ps.get_row() == 0 or ps.get_columns() == 0) return;
+	if (ps.get_row() == 0 or ps.get_columns() == 0) die();
 
 	clearscreen();
 	pg.drawRectangle(0, 0, ps.get_row(), ps.get_columns(), 0, 0, 0);
 
 	for (int frame = 0; frame <= 100; ++frame) {
-		for (int i = 0; i < 10; ++i) {
+		int spawn_rate = (ps.get_columns() * ps.get_row() / 2000);
+		for (int i = 0; i < spawn_rate; ++i) {
 			int x = rand() % ps.get_columns();
 			int y = rand() % ps.get_row();
 			int dx = (rand() % 15) - 7;
 			int dy = (rand() % 15) -7;
 			int life = 3;
-			int r = 255;
-			int g = 0;
-			int b = 0;
-
-			Particle p(x, y, dx, dy, life, Particle::BALLISTIC);
+			int r = 128 + rand() % 128;
+			int g = 128 + rand() % 128;
+			int b = 128 + rand() % 128;
+			
+			Particle p(x, y, dx, dy, life, Particle::FIREWORK);
 			ps.push_back(p);
 			pg.setColor(r, g, b);
 
 		}
 
 		ps.move_particle();
+		clearscreen();
 		ps.draw_particle(pg);
 
 		usleep(100000);

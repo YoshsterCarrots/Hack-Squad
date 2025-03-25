@@ -160,3 +160,24 @@ void ParticleSystem::draw_particle(ParticleGraphics t){
 	}
  
 */
+//remove partile once lifetime is over
+void ParticleSystem::remove(Cell* target) {
+	
+	if (target == nullptr) return;
+
+	if (target == head) {
+		head = target->next;
+		if (head) head->prev == nullptr;
+		else head = nullptr;
+	} else if (target == tail) {
+		tail = target->preve;
+		if (tail) tail ->next = nullptr;
+		else head = nullptr;
+	} else {
+		target->prev->next = target -> next;
+		target->next->prev = target -> prev;
+	}
+
+	delete target;
+	particleNum--;
+}
