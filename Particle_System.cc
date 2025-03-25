@@ -170,7 +170,7 @@ void ParticleSystem::remove(Cell* target) {
 		if (head) head->prev == nullptr;
 		else head = nullptr;
 	} else if (target == tail) {
-		tail = target->preve;
+		tail = target->prev;
 		if (tail) tail ->next = nullptr;
 		else head = nullptr;
 	} else {
