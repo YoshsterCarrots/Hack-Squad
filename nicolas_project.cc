@@ -6,8 +6,8 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include "nicolas_project.h"
 #include "/public/colors.h"
+#include "particle_graphics.h"
 #include "cell.h"
 #include "Particle.h"
 #include "Particle_System.h"

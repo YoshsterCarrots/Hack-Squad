@@ -7,9 +7,6 @@
 #include "particle_graphics.h"
 using namespace std;
 
-
-
-
 int main() {
 	int choice;
 
