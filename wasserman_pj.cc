@@ -19,9 +19,6 @@ void wasserman_project() {
 
 
 	auto [rows, columns] = get_terminal_size();
-	columns *= 4;
-	rows *= 4;
-	
 	ps.set_row(rows);
 	ps.set_columns(columns);
 
