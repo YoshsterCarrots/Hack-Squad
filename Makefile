@@ -23,3 +23,6 @@ clean:
 
 testMaybe: 
 	g++ yoshsterTesting.cc cell.cc Particle.cc Particle_System.cc particle_graphics.cc -o testMaybe
+
+yoshsterProject: yoshsterProject.cc
+	g++ -g -fsanitize=address -std=c++23 yoshsterProject.cc cell.cc Particle.cc Particle_System.cc particle_graphics.cc -o yoshsterProject
