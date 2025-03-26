@@ -6,8 +6,8 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "nicolas_project.h"
 #include "/public/colors.h"
-#include "particle_graphics.h"
 #include "cell.h"
 #include "Particle.h"
 #include "Particle_System.h"
@@ -81,7 +81,7 @@ void nicolas_project() {
 	clearscreen();
 
 	while (true) {
-		cout << "How many bombs would you like? (Max: 5)" << endl;
+		cout << "How many paintballs would you like? (Max: 5)" << endl;
 		cout << "Amount: ";
 		int number = 0;
 		cin >> number;
@@ -90,7 +90,7 @@ void nicolas_project() {
 
 		cout << "Amount of bombs: " << bomb.get_amount() << endl;
 
-		cout << "How big do you want the bombs to be? (Max radius: 10)" << endl;
+		cout << "How big do you want the paintballs to be? (Max radius: 10)" << endl;
 		cout << "Radius: ";
 		cin >> number;
 		if (!cin) die();
@@ -98,7 +98,7 @@ void nicolas_project() {
 
 		clearscreen();
 		char answer = 'N';
-		cout << "Amount of bombs: " << bomb.get_amount() << endl << "Radius of bombs: " << bomb.get_radius() << endl;
+		cout << "Amount of paintballs: " << bomb.get_amount() << endl << "Radius of paintballs: " << bomb.get_radius() << endl;
 		cout << "Is this your desired amount and radius? (Y/N)" << endl;
 		cin >> answer;
 		if (!cin) die();
@@ -108,6 +108,7 @@ void nicolas_project() {
 		} else if (answer == 'Y') break;
 		else die();
 	}
+//	ParticleSystem system;
 	ParticleGraphics rand_colors(rand() % 255, rand() % 255, rand() % 255);
 	vector<vector<char>> world; //Holds an 'X' if the spot is solid, ' ' otherwise
 	const char SOLID = 'X';
@@ -131,6 +132,9 @@ void nicolas_project() {
 	COLS = cols;
 	world.resize(rows);
 	for (vector<char> &row : world) row.resize(COLS, OPEN);
+
+//	system.set_row(rows);
+//	system.set_columns(cols);
 
 	//This is how you can get the time in C++
 	auto last_time = high_resolution_clock::now();
@@ -169,11 +173,16 @@ void nicolas_project() {
 			//			movecursor(click_row, click_col);
 			if (bomb.get_amount() != 0) {
 				rand_colors.drawCircle(click_row, click_col, bomb.get_radius(), rand() % 255, rand() % 255, rand() % 255);
+//				Particle p(click_row, click_col, (rand() % 10) + 1, (rand() % 10) + 1, 250, Particle::FIREWORK);
+//				system.push_back(p);
 				bomb.set_amount(bomb.get_amount() - 1);
 			}
 			//			setbgcolor(120, 60, 120);
 			//			cout << " ";
 		}
+//		system.move_particle();
+//		clearscreen();
+//		system.draw_particle(rand_colors);
 		usleep(100'000);
 	}
 	wait(5);

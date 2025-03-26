@@ -19,12 +19,12 @@ int main() {
 	cin >> choice;
 
 	if (choice == 1) {
-		nicolas_project();
-		clearscreen();
+		//placeholder
 	} else if (choice == 2) {
 		//placeholder
 	} else if (choice == 3) {
-		//placeholder
+		nicolas_project();
+		clearscreen();
 	} else if (choice == 4) {
 		wasserman_project();
 		clearscreen();
