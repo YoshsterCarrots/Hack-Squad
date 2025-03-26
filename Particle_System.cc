@@ -46,6 +46,10 @@ int ParticleSystem::numParticles(){
 	return particleNum;
 }
 
+Cell* ParticleSystem::getHead() const {
+	return head;
+}
+
 void ParticleSystem::move_particle(){
 	Cell* copy = head;
 	for(Cell* temp = head; temp != nullptr;){

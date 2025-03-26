@@ -45,6 +45,8 @@ class ParticleSystem{
 
 		int get_columns() const;
 
+		Cell* getHead() const;
+
 		void set_row(int r);
 
 		void set_columns(int c);

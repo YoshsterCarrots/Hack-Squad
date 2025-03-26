@@ -5,6 +5,7 @@
 #include "Particle.h"
 #include "Particle_System.h"
 #include "particle_graphics.h"
+#include "yoshsterProject.cc"
 using namespace std;
 
 int main() {
@@ -19,7 +20,8 @@ int main() {
 	cin >> choice;
 
 	if (choice == 1) {
-		//placeholder
+		runYoshster();
+		clearscreen();
 	} else if (choice == 2) {
 		//placeholder
 	} else if (choice == 3) {
