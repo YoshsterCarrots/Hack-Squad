@@ -6,6 +6,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "nicolas_project.h"
 #include "/public/colors.h"
 #include "cell.h"
 #include "Particle.h"
@@ -74,12 +75,12 @@ class Bombs {
 		}
 };
 
-int main() {
+void nicolas_project() {
 	srand(time(0));
 	Bombs bomb;
 	clearscreen();
 
-	while(true) {
+	while (true) {
 		cout << "How many bombs would you like? (Max: 5)" << endl;
 		cout << "Amount: ";
 		int number = 0;
@@ -104,8 +105,7 @@ int main() {
 		else if (answer == 'N') {
 			clearscreen();
 			continue;
-		}
-		else if(answer == 'Y') break;
+		} else if (answer == 'Y') break;
 		else die();
 	}
 	ParticleGraphics rand_colors(rand() % 255, rand() % 255, rand() % 255);
@@ -166,16 +166,16 @@ int main() {
 			if (world.at(click_row).at(click_col) == OPEN) {
 				world.at(click_row).at(click_row) = SOLID;
 			}
-//			movecursor(click_row, click_col);
+			//			movecursor(click_row, click_col);
 			if (bomb.get_amount() != 0) {
 				rand_colors.drawCircle(click_row, click_col, bomb.get_radius(), rand() % 255, rand() % 255, rand() % 255);
 				bomb.set_amount(bomb.get_amount() - 1);
 			}
-//			setbgcolor(120, 60, 120);
-//			cout << " ";
+			//			setbgcolor(120, 60, 120);
+			//			cout << " ";
 		}
 		usleep(100'000);
 	}
 	wait(5);
-	return 0;
 }
+
