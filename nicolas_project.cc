@@ -185,6 +185,6 @@ void nicolas_project() {
 //		system.draw_particle(rand_colors);
 		usleep(100'000);
 	}
-	wait(5);
+	wait(3);
 }
 
