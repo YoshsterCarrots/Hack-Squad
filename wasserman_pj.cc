@@ -6,11 +6,6 @@
 #include <ctime>
 #include <unistd.h>
 
-void die() {
-	cout << "BAD INPUT" << endl;
-	exit(EXIT_FAILURE);
-
-}
 
 void wasserman_project() {
 	
@@ -22,7 +17,7 @@ void wasserman_project() {
 	ps.set_row(rows);
 	ps.set_columns(columns);
 
-	if (ps.get_row() == 0 or ps.get_columns() == 0) die();
+	//if (ps.get_row() == 0 or ps.get_columns() == 0) die();
 
 	clearscreen();
 	pg.drawRectangle(0, 0, ps.get_row(), ps.get_columns(), 0, 0, 0);
