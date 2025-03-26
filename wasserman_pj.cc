@@ -35,9 +35,9 @@ void wasserman_project() {
 			int dx = (rand() % 15) - 7;
 			int dy = (rand() % 15) -7;
 			int life = 3;
-			int r = 128 + rand() % 128;
-			int g = 128 + rand() % 128;
-			int b = 128 + rand() % 128;
+			int r =rand() % 256;
+			int g =rand() % 256;
+			int b =rand() % 256;
 			
 			Particle p(x, y, dx, dy, life, Particle::FIREWORK);
 			ps.push_back(p);

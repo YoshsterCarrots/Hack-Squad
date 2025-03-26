@@ -32,6 +32,7 @@ int main() {
 	}
 	else if (choice == 4) {
 		wasserman_project();
+		clearscreen();
 	}
 
 
