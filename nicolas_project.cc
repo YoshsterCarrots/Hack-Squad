@@ -1,6 +1,7 @@
 #include <iostream>
 #include <csignal>
 #include <chrono>
+#include <thread>
 #include <unistd.h>
 #include <vector>
 #include <cstdlib>
@@ -43,6 +44,10 @@ void mouse_handler2(int row, int col) {
 	mouse_down = false;
 }
 
+void wait(int seconds) {
+	this_thread::sleep_for(chrono::seconds(seconds));
+}
+
 void die() {
 	cout << "BAD INPUT!" << endl;
 	exit(EXIT_FAILURE);
@@ -58,7 +63,7 @@ class Bombs {
 		}
 		void set_amount(int num) {
 			amount = num;
-			if (amount < 1 || amount > 5) die();
+			if (amount < 0 || amount > 5) die();
 		}
 		int get_radius() const {
 			return radius;
@@ -143,13 +148,17 @@ int main() {
 
 		//Non-blocking I/O read, so it can read a keypress immediately
 		//Does not need the user to hit enter, since we turned on raw mode above
+		if (bomb.get_amount() == 0) {
+			break;
+		}
+
 		int ch = quick_read();
 		if (ch == ERR) { //ERR means "no keypress read"
 						 //Do nothing
 		}
 		// Exit if user presses 'q'
 		if (ch == 'q') {
-			break;
+			continue;
 		}
 		if (mouse_down) {
 			mouse_down = false;
@@ -157,10 +166,16 @@ int main() {
 			if (world.at(click_row).at(click_col) == OPEN) {
 				world.at(click_row).at(click_row) = SOLID;
 			}
-			movecursor(click_row, click_col);
-			setbgcolor(120, 60, 120);
-			cout << " ";
+//			movecursor(click_row, click_col);
+			if (bomb.get_amount() != 0) {
+				rand_colors.drawCircle(click_row, click_col, bomb.get_radius(), rand() % 255, rand() % 255, rand() % 255);
+				bomb.set_amount(bomb.get_amount() - 1);
+			}
+//			setbgcolor(120, 60, 120);
+//			cout << " ";
 		}
 		usleep(100'000);
 	}
+	wait(5);
+	return 0;
 }
